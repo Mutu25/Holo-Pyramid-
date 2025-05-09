@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Holo Pyramid | Immersive Retail Technology</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #0a0a0a;
+      color: #ffffff;
+    }
+
+    header {
+      background: #111;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between; /* Distribuie spațiul între elemente */
+      align-items: center;
+      border-bottom: 1px solid #333;
+      position: relative; /* Important pentru poziționarea absolută a meniului pe mobil */
+    }
+
+    .header-title {
+        flex-grow: 1; /* Permite titlului să ocupe spațiul disponibil */
+        text-align: center; /* Centrează textul titlului */
+        margin-right: 50px; /* Adaugă spațiu pentru butonul de meniu pe mobil, dacă este cazul */
+    }
+
+    .header-title h1 {
+        margin: 0; /* Elimină marginile implicite ale h1 */
+    }
+
+    .menu-toggle {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+      display: none; /* Ascunde butonul implicit pe desktop */
+      z-index: 100; /* Asigură că butonul este deasupra altor elemente */
+    }
+
+    .main-nav {
+      display: flex; /* Meniul pe desktop */
+    }
+    .main-nav a {
+      color: #fff;
+      margin: 0 1rem;
+      text-decoration: none;
+      padding: 0.5rem 0;
+      transition: color 0.3s ease;
+    }
+    .main-nav a:hover {
+      color: #00ffe0;
+    }
+
+    /* Stilizare pentru dispozitive mobile */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block; /* Afișează butonul pe dispozitive mobile */
+      }
+
+      .main-nav {
+        display: none; /* Ascunde meniul implicit pe dispozitive mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Poziționează sub header */
+        left: 0; /* Aliniază la stânga */
+        background: #111;
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+        z-index: 50; /* Asigură că meniul este deasupra conținutului */
+      }
+
+      .main-nav a {
+        margin: 0.5rem 0;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #333;
+      }
+
+      .main-nav a:last-child {
+        border-bottom: none;
+      }
+
+      /* Clasa pentru a afișa meniul (se adaugă cu JavaScript) */
+      .main-nav.show {
+        display: flex;
+      }
+
+       .header-title {
+            margin-right: 0; /* Elimină spațiul de pe mobil */
+        }
+    }
+
+    .hero {
+      background: linear-gradient(to right, #000, #222);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .hero img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 1rem;
+      margin-top: 2rem;
+      box-shadow: 0 0 20px rgba(0, 255, 224, 0.3);
+    }
+    .hero h1 {
+      font-size: 3rem;
+      color: #00ffe0;
+    }
+    .section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      color: #00ffe0;
+      border-bottom: 1px solid #333;
+      padding-bottom: 0.5rem;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li::before {
+      content: "\2022";
+      color: #00ffe0;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-title">
+        <h1>Holo Pyramid</h1>
+    </div>
+    <button class="menu-toggle" aria-label="Toggle menu">
+      ☰ <!-- Iconiță hamburger -->
+    </button>
+    <nav class="main-nav">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#demo">Demo</a>
+      <a href="#shop">Shop</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    
+    <p style="color: white;">Holographic Retail: Experience the Future of Shopping</p>
+    <!-- Verifică atent calea imaginii aici -->
+    <img src="images/holo-pyramid-hero.jpg" alt="Holo Pyramid Demo" />
+  </section>
+
+  <section class="section" id="about">
+    <h2>About</h2>
+    <p>Holo Pyramid bridges the gap between physical and digital shopping by enabling customers to interact with 360° holographic products using gestures or voice commands — all in real time.</p>
+  </section>
+
+  <section class="section" id="features">
+    <h2>Features</h2>
+    <ul>
+      <li><strong>Visual Exploration:</strong> 360° holographic product display with detailed visuals.</li>
+      <li><strong>Gesture & Voice Control:</strong> Intuitive, touch-free interaction.</li>
+      <li><strong>Instant Purchase:</strong> Real-time checkout within the holographic interface.</li>
+      <li><strong>Smart Logistics:</strong> Inventory optimization & reduced return rates.</li>
+      <li><strong>Data Analytics:</strong> Tracks product interactions and customer behavior.</li>
+    </ul>
+  </section>
+
+  <section class="section" id="demo">
+    <h2>Live Demo</h2>
+    
+    <video width="320" height="240" controls autoplay>
+  <source src="your_demo_video.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+    
+    <p>Experience the future of shopping with our interactive holographic demo, showcasing real-time selection, customization, and purchase capabilities.</p>
+  </section>
+
+  <section class="section" id="shop">
+    <h2>Shop</h2>
+    <p>Explore a sample of products available in the holographic interface. Fully customizable to your store’s inventory and branding.</p>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>Contact</h2>
+    <p>Email: contact@holopyramid.com<br>Phone: +1 (123) 456-7890</p>
+  </section>
+
+  <footer>
+    © 2025 Holo Pyramid Inc. All rights reserved.
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+
+    menuToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('show');
+    });
+  </script>
+</body>
+</html>
